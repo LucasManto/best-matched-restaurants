@@ -18,3 +18,60 @@ You have data about local restaurants located near your company, which you can f
      - After the above process, if two matches are still equal, then the restaurant with a lower price wins.
      - After the above process, if two matches are still equal, then you can randomly decide the order.
      - Example: if the input is Customer Rating = 3 and Price = 15. Mcdonald’s is 4 stars with an average spend = $10, and it is 1 mile away. And KFC is 3 stars with an average spend = $8, and it is 1 mile away. Then we should consider Mcdonald’s as a better match than KFC. (They both matches the search criteria -> we compare distance -> we get a tie -> we then compare customer rating -> Mcdonald’s wins)
+
+## Solution description
+
+This is the first working solution for the **best-matched-restaurants** problem. The focus in this phase was **understanding the problem** and the provided data in order to write tests that would **ensure the expected behavior** and code that would **solve the problem**, even though it doesn't yet follow the best practices.
+
+It uses the data provided and by executing the project (see [How to run](#how-to-run)) you would get the result of searching for the best-matched restaurants **without defining any parameter** and the result of defining **name=DeLiCiOuS AND customerRating=4**. The result is a restaurant list that shows **every property** of each restaurant, which includes its **cuisine name**.
+
+If you want to evaluate the result of the search by providing some parameters, you can change the code inside the **main** function located in the **src/main/java/org/example/App.java** file.
+
+## Assumptions and explanations
+
+- This version uses only data from the provided CSV files/
+- Search by string (name and cuisine) are **case-insensitive**, to achieve **more matches**.
+- Price is defined as int to **simplify data manipulation** since the provided records do not present decimal values. But in a scenario where it should be of a monetary type the **best practice would be to use Money and Currency API**.
+- Code for `Restaurant.equals` was **generated automatically** with the objective to **compare restaurants in tests** in a clean way.
+
+## Next steps for enhancing project
+
+- Setting data source for `BestMatchedRestaurants` through dependency injection, enabling usage of different sources (File, Memory, Database, etc).
+- Improve code maintenability.
+  - Make it more clear and legible.
+  - Use constants or enum to define the available params.
+  - Make it extensible, in case you want to add more parameters or change the sorting logic.
+- Build different clients.
+  - CLI.
+  - Web API.
+- Build some UI.
+
+### Technologies
+
+- Java 17
+- Gradle 8.6
+- JUnit
+
+### How to run
+
+With Java 17 installed, you can run the application with the following command:
+
+```
+./gradlew run
+```
+
+It will print in the console the following content:
+
+```
+Search parameters: {}
+Results: [Restaurant [name=Deliciousgenix, customerRating=4, distance=1, price=10, cuisine=Spanish], Restaurant [name=Deliciouszilla, customerRating=4, distance=1, price=15, cuisine=Chinese], Restaurant [name=Fodder Table, customerRating=4, distance=1, price=20, cuisine=Korean], Restaurant [name=Dished Grill, customerRating=3, distance=1, price=10, cuisine=Korean], Restaurant [name=Sizzle Yummy, customerRating=3, distance=1, price=15, cuisine=Russian]]
+
+Search parameters: {name=DeLiCiOuS, customerRating=4}
+Results: [Restaurant [name=Deliciousgenix, customerRating=4, distance=1, price=10, cuisine=Spanish], Restaurant [name=Deliciouszilla, customerRating=4, distance=1, price=15, cuisine=Chinese], Restaurant [name=Bang Delicious, customerRating=5, distance=2, price=15, cuisine=Russian], Restaurant [name=Crisp Delicious, customerRating=5, distance=2, price=45, cuisine=Russian], Restaurant [name=Gusto Delicious, customerRating=5, distance=3, price=50, cuisine=Chinese]]
+```
+
+You can also run the tests with the following command:
+
+```
+./gradlew test
+```
