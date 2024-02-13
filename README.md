@@ -18,3 +18,9 @@ You have data about local restaurants located near your company, which you can f
      - After the above process, if two matches are still equal, then the restaurant with a lower price wins.
      - After the above process, if two matches are still equal, then you can randomly decide the order.
      - Example: if the input is Customer Rating = 3 and Price = 15. Mcdonald’s is 4 stars with an average spend = $10, and it is 1 mile away. And KFC is 3 stars with an average spend = $8, and it is 1 mile away. Then we should consider Mcdonald’s as a better match than KFC. (They both matches the search criteria -> we compare distance -> we get a tie -> we then compare customer rating -> Mcdonald’s wins)
+
+## Solution stages
+
+The list below shows the solutions for this challenge in different stages. Every branch describes the current state, its assumptions and next steps.
+
+1. [Working solution](https://github.com/LucasManto/best-matched-restaurants/tree/working-solution)
