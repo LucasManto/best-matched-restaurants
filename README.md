@@ -23,4 +23,5 @@ You have data about local restaurants located near your company, which you can f
 
 The list below shows the solutions for this challenge in different stages. Every branch describes the current state, its assumptions and next steps.
 
-1. [Working solution](https://github.com/LucasManto/best-matched-restaurants/tree/working-solution)
+1. [Working solution with better maintainability and readability](https://github.com/LucasManto/best-matched-restaurants/tree/enhance-maintainability-and-readability)
+2. [Working solution](https://github.com/LucasManto/best-matched-restaurants/tree/working-solution)
