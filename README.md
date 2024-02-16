@@ -21,11 +21,11 @@ You have data about local restaurants located near your company, which you can f
 
 ## Solution description
 
-This is the improvement of the first working solution for the **best-matched-restaurants** problem. The focus in this phase was **enhancing maintainability and readability**. This was achieved by creating a `Parameter` class with **base behavior and definitions**, and **concrete implementations of each accepted parameter**. The concrete implementations are created by `ParametersFactory` based on user input.
+This is the improvement of the first working solution for the **best-matched-restaurants** problem. The focus in this phase was **enhancing maintainability and readability**. This was achieved by creating a `Parameter` class with **base behavior and definitions**, and **concrete implementations of each accepted parameter**. The concrete implementation objects are created by `ParametersFactory` based on user input.
 
-Now to accept new parameter there is no need to modify `BestMatchedRestaurants`. It is enough to create a new concrete implementation and add it to the `ParametersFactory`.
+Now to accept a new parameter there is no need to modify `BestMatchedRestaurants`. It is enough to create a new concrete implementation and add it to the `ParametersFactory`.
 
-Also the sorting algorithm was separated into a named function called `byDistanceAndCustomerRatingAndPrice` that makes the sorting criterea easier to understand.
+Also the sorting algorithm was separated into a named function called `byDistanceAndCustomerRatingAndPrice` that makes the sorting criteria easier to understand.
 
 It uses the data provided and by executing the project (see [How to run](#how-to-run)) you would get the result of searching for the best-matched restaurants **without defining any parameter** and the result of defining **name=DeLiCiOuS AND customerRating=4**. The result is a restaurant list that shows **every property** of each restaurant, which includes its **cuisine name**.
 
