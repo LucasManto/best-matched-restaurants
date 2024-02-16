@@ -22,6 +22,20 @@ class BestMatchedRestaurantsTest {
     }
 
     @Test
+    void shouldReturnRestaurantsWhenInvalidFilterIsSet() {
+        List<Restaurant> expected = List.of(
+                new Restaurant("Deliciousgenix", 4, 1, 10, "Spanish"),
+                new Restaurant("Deliciouszilla", 4, 1, 15, "Chinese"),
+                new Restaurant("Fodder Table", 4, 1, 20, "Korean"),
+                new Restaurant("Dished Grill", 3, 1, 10, "Korean"),
+                new Restaurant("Sizzle Yummy", 3, 1, 15, "Russian"));
+
+        List<Restaurant> actual = BestMatchedRestaurants.searchRestaurants(Map.of("invalid", "invalid"));
+
+        assertArrayEquals(expected.toArray(), actual.toArray());
+    }
+
+    @Test
     void shouldReturnRestaurantsThatMatchesName() {
         List<Restaurant> expected = List.of(
                 new Restaurant("Deliciousgenix", 4, 1, 10, "Spanish"),
